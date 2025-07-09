@@ -17,11 +17,29 @@ This script runs in a standard Python environment. You will need:
 This script is designed to analyze proteomic data obtained through DIA-Analyst, a web-based tool for data-independent acquisition (DIA) proteomics: https://analyst-suites.org/apps/dia-analyst/.
 The pipeline requires three input datasets:
 
-**1. Original (Non-Imputed) Dataset:** This dataset was used to filter proteins with >10% missing values across samples are excluded from downstream analysis (tabular .csv or .tsv file). Rows were protein identifiers and colums were different samples. 
+**1. Original (Non-Imputed) Dataset:** 
+- This dataset was used to filter proteins with >10% missing values across samples are excluded from downstream analysis (tabular .csv or .tsv file). Rows were protein identifiers and colums were different samples. 
 
-**2. Imputed Dataset:** Same structure as the original dataset, but missing values are imputed (e.g., using DIA-Analyst’s internal methods). Original data can be used without imputation.
+**2. Imputed Dataset:** 
+- Same structure as the original dataset, but missing values are imputed (e.g., using DIA-Analyst’s internal methods). Original data can be used without imputation.
 
-**3. Secretome Reference Dataset:** To annotate or filter for secreted proteins among the identified biomarkers. Source of secretome data set is Uhlén, M. et al. (2019). The human secretome. Science Signaling, 12. (https://doi.org/10.1126/scisignal.aaz0274)
+**3. Secretome Reference Dataset:** 
+- To annotate or filter for secreted proteins among the identified biomarkers. Source of secretome data set is Uhlén, M. et al. (2019). The human secretome. Science Signaling, 12. (https://doi.org/10.1126/scisignal.aaz0274)
 
+# Output
+This script is designed to analyze proteomic data obtained through DIA-Analyst, a web-based tool for data-independent acquisition (DIA) proteomics: https://analyst-suites.org/apps/dia-analyst/.
+The pipeline requires three input datasets:
+
+**1. Excluded proteins:** 
+- The script filters out proteins with >10% missing values using the original (non-imputed) dataset: 
+
+**2. List of differential proteins:** 
+- After repeated analysis across 50 random splits, the script identifies consistently significant biomarkers that are either upregulated or downregulated across all comparisons (mixed-direction genes are excluded). 
+
+**3. List differential protein in secretome:** 
+- The script matches identified biomarkers to the human secretome (Uhlén et al., 2019) for biological interpretation. 
+
+**4. Validation:** 
+- To annotate or filter for secreted proteins among the identified biomarkers. Source of secretome data set is Uhlén, M. et al. (2019). The human secretome. Science Signaling, 12. (https://doi.org/10.1126/scisignal.aaz0274)
 
 
