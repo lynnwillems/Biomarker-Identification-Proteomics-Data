@@ -18,13 +18,16 @@ This script is designed to analyze proteomic data obtained through DIA-Analyst, 
 The pipeline requires three input datasets:
 
 **1. Original (Non-Imputed) Dataset:** 
-- This dataset was used to filter proteins with >10% missing values across samples are excluded from downstream analysis (tabular .csv or .tsv file). Rows were protein identifiers and colums were different samples. 
+- This dataset was used to filter proteins with >10% missing values across samples are excluded from downstream analysis (tabular .csv or .tsv file).
+- Rows were protein identifiers and colums were different samples. 
 
 **2. Imputed Dataset:** 
-- Same structure as the original dataset, but missing values are imputed (e.g., using DIA-Analyst’s internal methods). Original data can be used without imputation.
+- Same structure as the original dataset, but missing values are imputed (e.g., using DIA-Analyst’s internal methods).
+- Note: Original data can be used without imputation.
 
 **3. Secretome Reference Dataset:** 
-- To annotate or filter for secreted proteins among the identified biomarkers. Source of secretome data set is Uhlén, M. et al. (2019). The human secretome. Science Signaling, 12. (https://doi.org/10.1126/scisignal.aaz0274)
+- To annotate or filter for secreted proteins among the identified biomarkers.
+- Source secretome: Uhlén, M. et al. (2019). The human secretome. Science Signaling, 12. (https://doi.org/10.1126/scisignal.aaz0274)
 
 # Output
 This script is designed to analyze proteomic data obtained through DIA-Analyst, a web-based tool for data-independent acquisition (DIA) proteomics: https://analyst-suites.org/apps/dia-analyst/.
